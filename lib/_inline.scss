@@ -3,15 +3,15 @@
 @import "variables";
 
 @mixin hetiInline {
-  a {
-    text-decoration: none;
-
-    &:hover {
-      padding-block-end: 1px;
-      border-block-end: 1px solid currentColor;
-      text-decoration: none;
-    }
-  }
+  //a {
+  //  text-decoration: none;
+  //
+  //  &:hover {
+  //    padding-block-end: 1px;
+  //    border-block-end: 1px solid currentColor;
+  //    text-decoration: none;
+  //  }
+  //}
 
   abbr[title] {
     padding-block-end: 1px;
@@ -25,12 +25,12 @@
     font-weight: $font-weight-bold;
   }
 
-  code {
-    margin-inline-start: 0.25em;
-    margin-inline-end: 0.25em;
-    font-family: $font-family-mono;
-    font-size: 0.875em;
-  }
+  //code {
+  //  margin-inline-start: 0.25em;
+  //  margin-inline-end: 0.25em;
+  //  font-family: $font-family-mono;
+  //  font-size: 0.875em;
+  //}
 
   dfn {
     font-weight: $font-weight-bold;

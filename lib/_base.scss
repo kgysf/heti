@@ -20,24 +20,24 @@
   }
 
   // 定义块级元素样式
-  blockquote {
-    margin-block-start: $std-block-unit * 0.5;
-    margin-block-end: $std-block-unit;
-    margin-inline-start: $std-inline-unit * 2;
-    margin-inline-end: $std-inline-unit * 2;
-    padding-block-start: $std-block-unit * 0.5;
-    padding-block-end: $std-block-unit * 0.5;
-    padding-inline-start: $std-inline-unit;
-    padding-inline-end: $std-inline-unit;
-    //border-radius: 4px;
-    background-color: hsla(0, 0%, 0%, 0.054);
+  //blockquote {
+  //  margin-block-start: $std-block-unit * 0.5;
+  //  margin-block-end: $std-block-unit;
+  //  margin-inline-start: $std-inline-unit * 2;
+  //  margin-inline-end: $std-inline-unit * 2;
+  //  padding-block-start: $std-block-unit * 0.5;
+  //  padding-block-end: $std-block-unit * 0.5;
+  //  padding-inline-start: $std-inline-unit;
+  //  padding-inline-end: $std-inline-unit;
+  //  //border-radius: 4px;
+  //  background-color: hsla(0, 0%, 0%, 0.054);
+  //
+  //  @include darkmode-style {
+  //    background-color: hsla(0, 0%, 100%, 0.054);
+  //  }
+  //}
 
-    @include darkmode-style {
-      background-color: hsla(0, 0%, 100%, 0.054);
-    }
-  }
-
-  figure {
+  figure:not(.highlight) {
     display: block;
     text-align: center;
 
@@ -73,7 +73,7 @@
     }
   }
 
-  $format_pre_code: true !default;
+  $format_pre_code: false !default;
 
   @if $format_pre_code {
     pre {
