@@ -21,7 +21,7 @@
 
 #{$root-selector} {
   // 中文每行展示文字（CPL）建议在 30~50 之间，默认 42
-  max-width: $line-length;
+  //max-width: $line-length;
 
   // 默认字体大小为 16px，行高 1.5
   font-size: $font-size-normal;
