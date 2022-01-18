@@ -656,7 +656,7 @@
 
 	const hasOwn = {}.hasOwnProperty;
 	const HETI_NON_CONTIGUOUS_ELEMENTS = Object.assign({}, findAndReplaceDOMText.NON_CONTIGUOUS_PROSE_ELEMENTS, {
-	  ins: 1, del: 1, s: 1, a: 1,
+	  ins: 1, del: 1, s: 1,
 	});
 	const HETI_SKIPPED_ELEMENTS = Object.assign({}, findAndReplaceDOMText.NON_PROSE_ELEMENTS, {
 	  pre: 1, code: 1, sup: 1, sub: 1, 'heti-spacing': 1, 'heti-close': 1,
@@ -722,7 +722,9 @@
 	      forceContext: this.funcForceContext,
 	      filterElements: this.funcFilterElements,
 	    };
-	    const getWrapper = function (elementName, classList, text) {
+	    const getWrapper = function (elementName, classList, text, notNull, portion) {
+	      // console.log(text, $$elm, portion)
+	      if (text === '' && notNull) return document.createElement('span');
 	      const $$r = document.createElement(elementName);
 	      $$r.className = classList;
 	      $$r.textContent = text.trim();
@@ -731,18 +733,18 @@
 
 	    findAndReplaceDOMText($$elm, Object.assign({}, commonConfig, {
 	      find: this.REG_FULL,
-	      replace: portion => getWrapper('heti-spacing', 'heti-spacing-start heti-spacing-end', portion.text),
+	      replace: portion => getWrapper('heti-spacing', 'heti-spacing-start heti-spacing-end', portion.text, true),
 	      offset: this.offsetWidth,
 	    }));
 
 	    findAndReplaceDOMText($$elm, Object.assign({}, commonConfig, {
 	      find: this.REG_START,
-	      replace: portion => getWrapper('heti-spacing', 'heti-spacing-start', portion.text),
+	      replace: portion => getWrapper('heti-spacing', 'heti-spacing-start', portion.text, true),
 	    }));
 
 	    findAndReplaceDOMText($$elm, Object.assign({}, commonConfig, {
 	      find: this.REG_END,
-	      replace: portion => getWrapper('heti-spacing', 'heti-spacing-end', portion.text),
+	      replace: portion => getWrapper('heti-spacing', 'heti-spacing-end', portion.text, true),
 	      offset: this.offsetWidth,
 	    }));
 
